@@ -60,13 +60,13 @@ return {
             on_attach = on_attach,
             capabilities = capabilities,
             -- added to surpress `undefined global 'vim'` warning
-            --settings = {
-            --    Lua = {
-            --        diagnostics = {
-            --            globals = { "vim" },
-            --        },
-            --    },
-            --},
+            settings = {
+                Lua = {
+                    diagnostics = {
+                        globals = { "vim" },
+                    },
+                },
+            },
         })
 
         lspconfig.zls.setup({
@@ -75,6 +75,16 @@ return {
         })
 
         lspconfig.rust_analyzer.setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
+
+        lspconfig.tsserver.setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
+
+        lspconfig.bashls.setup({
             on_attach = on_attach,
             capabilities = capabilities,
         })

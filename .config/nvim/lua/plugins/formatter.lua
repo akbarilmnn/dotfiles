@@ -16,7 +16,8 @@ return {
                 nls.builtins.formatting.zigfmt,
                 -- all the diagnostics needed for null-ls
                 nls.builtins.diagnostics.selene,
-                nls.builtins.diagnostics.eslint_d
+                -- disable this because eslint really want's a .eslintrc file or else it will complain
+                -- nls.builtins.diagnostics.eslint_d
             }
         }
     end
