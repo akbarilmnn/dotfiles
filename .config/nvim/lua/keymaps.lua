@@ -1,6 +1,5 @@
 ---@diagnostic disable: unused-function
-local set_keymap = vim.api.nvim_set_keymap
-local opts = { noremap = true, silent = true }
+-- local opts = { noremap = true, silent = true }
 
 vim.g.mapleader = ' '
 
@@ -44,13 +43,18 @@ set_keymap('v', ">", ">gv", " move a block of code into the right")
 
 
 -- telescope keymaps 
--- telescope
 set_keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", "find files within current working directory respects, .gitignore")
 set_keymap("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", "find string in current working directory as you type")
 set_keymap("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", "find string under cursor in current working directory")
 set_keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", "list open buffers in current neovim instance")
 set_keymap("n", "<leader>fh", "<cmd>Telescope help_tags<cr>", "list available help help_tags")
 
+-- horizontal keymaps 
+set_keymap("n", "<C-u>", "<C-u>zz", "go to half of the file upward and centers the position of the cursor")
+set_keymap("n", "<C-d>", "<C-d>zz", "go to half of the file downward and centers the position of the cursor")
 
-
-
+-- keymaps for better pane navigation 
+set_keymap("n", "<C-h>", "<cmd>wincmd h<cr>", "go right to the next panes")
+set_keymap("n", "<C-j>", "<cmd>wincmd j<cr>", "go down to the next panes")
+set_keymap("n", "<C-k>", "<cmd>wincmd k<cr>", "go up to the next panes")
+set_keymap("n", "<C-l>", "<cmd>wincmd l<cr>", "go left to the next panes")
