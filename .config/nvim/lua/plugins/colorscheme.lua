@@ -1,37 +1,17 @@
 return {
-   -- COLORSCHEME #1
-   -- colorscheme i used to use
-   -- "rebelot/kanagawa.nvim",
-   -- config = function() 
-
-   --     -- some additional configuration 
-   --     require("kanagawa").setup({
-   --         commentStyle = {
-   --             italic = false
-   --         }
-   --     })
-
-   --     -- initialize the colorscheme
-   --     vim.cmd("colorscheme kanagawa")
-   -- end, 
-   -- COLORSCHEME #2
-   -- colorscheme i used to use
-   --"folke/tokyonight.nvim",
-   --config = function()
-   --    require("tokyonight").setup {
-   --        styles = {
-   --            comments = {
-   --                italic = false,
-   --            },
-   --            keywords = {
-   --                italic = false,
-   --            }
-   --        }
-   --    }
-   --    vim.cmd [[colorscheme tokyonight]]
-   --end
-   -- COLORSCHEME #3
    "ellisonleao/gruvbox.nvim",
+   -- these are just multiple colorscheme plugins not dependencies needed for gruvbox.nvim,
+   -- these reason i need to put other colorscheme into the dependencies field is because, 
+   -- if i put a string inside this table that has a string before, lazy.nvim will not allow that to happen.
+   dependencies = {
+        "Mofiqul/vscode.nvim",
+        {
+            -- the reason why there is a name field in this colorscheme plugin is to rename a plugin and because lazy.nvim will name this 
+            -- whatever the name after `/` sign so the name of this plugins will be nvim. Which is confusinga.
+            "catppuccin/nvim",
+            name = 'catppuccin',
+        },
+   },
    config = function()
        require("gruvbox").setup {
            bold = false,
