@@ -2,6 +2,9 @@ return {
     "nvim-treesitter/nvim-treesitter",
     config = function()
         require("nvim-treesitter.configs").setup({
+            highlight = {
+                enabled  = true,
+            },
             ensure_installed = {
                 "vim",
                 "c",
@@ -10,6 +13,7 @@ return {
                 "rust",
                 "javascript",
                 "typescript",
+                "tsx",
                 "html",
                 "css",
                 "lua"
