@@ -451,10 +451,10 @@ font:
 # Default:
 #   - (Linux/BSD/macOS) `$SHELL` or the user's login shell, if `$SHELL` is unset
 #   - (Windows) powershell
-shell:
-  program: C:\Windows\System32\wsl.exe -d Ubuntu
-  args:
-    - --cd ~
+#shell:
+#  program: C:\Windows\System32\wsl.exe -d Ubuntu
+#  args:
+#    - --cd ~
 
 # Startup directory
 #
