@@ -84,6 +84,22 @@ return {
             capabilities = capabilities,
         })
 
+        lspconfig.denols.setup({
+            on_attach = on_attach,
+            capabilites = capabilities,
+            root_dir = lspconfig.util.root_pattern("deno.json"),
+        })
+
+        lspconfig.cssls.setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
+
+        lspconfig.html.setup({
+            on_attach = on_attach,
+            capabilities = capabilities,
+        })
+
         lspconfig.bashls.setup({
             on_attach = on_attach,
             capabilities = capabilities,
