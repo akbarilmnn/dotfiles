@@ -11,6 +11,7 @@ return {
             "catppuccin/nvim",
             name = 'catppuccin',
         },
+        "folke/tokyonight.nvim",
    },
    config = function()
        require("gruvbox").setup {
@@ -20,6 +21,16 @@ return {
                 comments = false,
            },
        }
-       vim.cmd [[colorscheme gruvbox]]
+       require("tokyonight").setup {
+           styles = {
+               comments = {
+                   italic = false,
+               },
+               keywords = {
+                   italic = false,
+               }
+           }
+       }
+       vim.cmd [[colorscheme tokyonight-night]]
    end,
 }
