@@ -43,6 +43,10 @@ local options = {
     clipboard = "unnamedplus",       
 }
 
+vim.wo.relativenumber = true
+-- to make the eol character visible
+vim.opt.listchars:append({ eol = "↵"})
+
 for key, value in pairs(options) do 
     vim.opt[key] = value
 end
