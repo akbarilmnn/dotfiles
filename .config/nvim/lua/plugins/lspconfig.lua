@@ -42,8 +42,16 @@ return {
                 vim.lsp.buf.format()
             end, { desc = "Format current buffer with LSP" })
         end
-
-        mason.setup()
+    
+        mason.setup({
+            ensure_instaled = {
+                "clangd",
+                "rustfmt",
+                "clang-format",
+                "stylua",
+                "selene",
+            }
+        })
 
         local servers = {
             lua_ls = {},
