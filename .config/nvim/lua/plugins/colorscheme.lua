@@ -1,13 +1,14 @@
 return {
-	"ellisonleao/gruvbox.nvim",
+	"rebelot/kanagawa.nvim",
 	config = function()
-		require("gruvbox").setup({
-			bold = false,
-			italic = {
-				strings = false,
-				comments = false,
+		require("kanagawa").setup({
+			commentStyle = {
+				italic = false,
+			},
+			keywordStyle = {
+				italic = false,
 			},
 		})
-		vim.cmd([[colorscheme gruvbox]])
+		vim.cmd([[colorscheme kanagawa-wave]])
 	end,
 }

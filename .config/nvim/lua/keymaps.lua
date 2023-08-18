@@ -41,12 +41,7 @@ set_keymap("v", "<", "<gv", "move a block of code into the left")
 set_keymap("v", ">", ">gv", " move a block of code into the right")
 
 -- telescope keymaps
-set_keymap(
-	"n",
-	"<leader>ff",
-	"<cmd>Telescope find_files<cr>",
-	"find files within current working directory respects, .gitignore"
-)
+set_keymap("n", "<leader>ff", "<cmd>Telescope find_files<cr>", "find files within current directory")
 set_keymap("n", "<leader>fs", "<cmd>Telescope live_grep<cr>", "find string in current working directory as you type")
 set_keymap("n", "<leader>fc", "<cmd>Telescope grep_string<cr>", "find string under cursor in current working directory")
 set_keymap("n", "<leader>fb", "<cmd>Telescope buffers<cr>", "list open buffers in current neovim instance")
