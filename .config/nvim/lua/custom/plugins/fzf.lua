@@ -13,7 +13,14 @@ return {
 	config = function()
 		local telescope = require("telescope")
 
-		telescope.setup({})
+		telescope.setup({
+			pickers = {
+				find_files = {
+					theme = "dropdown",
+					previewer = false,
+				},
+			},
+		})
 
 		telescope.load_extension("fzf")
 	end,
