@@ -1,6 +1,13 @@
 -- set map leader here before lazy loads...
 vim.g.mapleader = " "
 
+-- disable netrw at the very start of your init.lua
+vim.g.loaded_netrw = 1
+vim.g.loaded_netrwPlugin = 1
+
+-- set termguicolors to enable highlight groups
+vim.opt.termguicolors = true
+
 -- set default background to dark mode
 vim.o.background = "dark"
 
@@ -42,7 +49,13 @@ local options = {
 
 vim.wo.relativenumber = true
 -- to make the eol character visible
-vim.opt.listchars:append({ eol = "↵", tab = "»  " })
+vim.opt.list = true
+vim.opt.listchars:append({ eol = "↵", tab = "   " })
+
+-- some commands i wanted to be able to run
+vim.api.nvim_buf_create_user_command(0, "Config", function(_)
+	vim.cmd([[e ~/.config/nvim/init.lua]])
+end, { desc = "Go to neovim config file." })
 
 for key, value in pairs(options) do
 	vim.opt[key] = value
