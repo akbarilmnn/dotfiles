@@ -1,10 +1,19 @@
 return {
-	"folke/tokyonight.nvim",
-	dependencies = {
-		"phha/zenburn.nvim",
-	},
-	priority = 1000,
+	"ellisonleao/gruvbox.nvim",
 	config = function()
-        vim.cmd([[colorscheme tokyonight-night]])
+		require("gruvbox").setup({
+			contrast = "hard",
+			italic = {
+				strings = false,
+				emphasis = false,
+				comments = false,
+				operators = false,
+			},
+            palette_overrides = {
+                -- this is the variable color highlighting
+                light1 = "#f7d883"
+            }
+		})
+		vim.cmd([[colorscheme gruvbox]])
 	end,
 }

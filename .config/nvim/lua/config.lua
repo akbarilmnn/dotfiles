@@ -1,6 +1,5 @@
 -- set map leader here before lazy loads...
 vim.g.mapleader = " "
-
 -- disable netrw at the very start of your init.lua
 vim.g.loaded_netrw = 1
 vim.g.loaded_netrwPlugin = 1
@@ -11,9 +10,11 @@ vim.opt.termguicolors = true
 -- set default background to dark mode
 vim.o.background = "dark"
 
+
 local options = {
 	cursorline = false,
-
+    -- to make the cursor a thick block 
+    -- guicursor = ""
 	expandtab = true,
 	smarttab = true,
 	shiftwidth = 4,

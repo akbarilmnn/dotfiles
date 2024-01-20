@@ -15,8 +15,6 @@ return {
 		local luasnip = require("luasnip")
 		local lspkind = require("lspkind")
 
-        
-
 		cmp.setup({
 			snippet = {
 				expand = function(args)
