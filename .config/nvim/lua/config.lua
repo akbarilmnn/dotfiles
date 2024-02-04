@@ -10,8 +10,11 @@ vim.opt.termguicolors = true
 -- set default background to dark mode
 vim.o.background = "dark"
 
+-- better completion experience
+vim.opt.completeopt = { "menuone", "noselect" }
+
 local options = {
-	cursorline = false,
+	cursorline = true,
 	-- to make the cursor a thick block
 	-- guicursor = ""
 	expandtab = true,
