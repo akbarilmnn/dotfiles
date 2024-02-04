@@ -1,9 +1,17 @@
 [user]
+
 	name = akbar
+
 	email = akbarsmp27@gmail.com
+
 [alias]
+
 	history = log --oneline --graph --decorate
+
 [init]
+
 	defaultBranch = main
+
 [core]
+
 	editor = nvim
