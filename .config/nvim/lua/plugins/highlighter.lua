@@ -1,7 +1,11 @@
 return {
     "nvim-treesitter/nvim-treesitter",
-    build = ":TSUpdate",
-    config = function() 
+    -- build = ":TSUpdate",
+    build = function()
+        require("nvim-treesitter.install").update({with_sync = true});
+    end,
+    event = { "BufEnter" },
+    config = function()
         local configs = require("nvim-treesitter.configs");
 
         configs.setup({

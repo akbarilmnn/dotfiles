@@ -10,11 +10,10 @@ vim.opt.termguicolors = true
 -- set default background to dark mode
 vim.o.background = "dark"
 
-
 local options = {
 	cursorline = false,
-    -- to make the cursor a thick block 
-    -- guicursor = ""
+	-- to make the cursor a thick block
+	-- guicursor = ""
 	expandtab = true,
 	smarttab = true,
 	shiftwidth = 4,

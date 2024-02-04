@@ -59,5 +59,7 @@ set_keymap("n", "<C-j>", "<cmd>wincmd j<cr>", "go down to the next panes")
 set_keymap("n", "<C-k>", "<cmd>wincmd k<cr>", "go up to the next panes")
 set_keymap("n", "<C-l>", "<cmd>wincmd l<cr>", "go left to the next panes")
 
-set_keymap("n", "<leader>to", "<cmd>NvimTreeToggle<CR>", "Toggle file explorer") -- toggle file explorer
-set_keymap("n", "<leader>tr", "<cmd>NvimTreeRefresh<CR>", "Refresh file explorer") -- refresh file explorer
+set_keymap("n", "<leader>to", "<cmd>Oil --float<cr>", "Toggle file explorer") -- toggle file explorer
+
+-- dismiss nvim.notify 
+set_keymap("n", "<leader>ds", "<cmd>lua require(\"notify\").dismiss()<cr>", "dismiss nvim.notify");
