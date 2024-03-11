@@ -23,6 +23,8 @@ return {
 				treesitter = true,
 				treesitter_context = true,
 			},
+			-- TODO: override some highlights such that it matches for vscode dark plust theme
+			-- :help highlight to see the current highlighted color for each highlighted item.
 		})
 
 		vim.cmd.colorscheme("catppuccin-mocha")

@@ -1,14 +1,16 @@
 return {
-    "neovim/nvim-lspconfig",
+	"neovim/nvim-lspconfig",
 	event = { "BufReadPre", "BufNewFile" },
 	dependencies = {
 		"williamboman/mason.nvim",
 		"williamboman/mason-lspconfig.nvim",
 		"hrsh7th/nvim-cmp",
 		"hrsh7th/cmp-nvim-lsp",
+		"WhoIsSethDaniel/mason-tool-installer.nvim",
 	},
 	config = function()
 		local mason = require("mason")
+		local mason_tool_installer = require("mason-tool-installer")
 		local mason_lspconfig = require("mason-lspconfig")
 
 		local on_attach = function(_, bufnr)
@@ -38,7 +40,23 @@ return {
 		end
 
 		mason.setup()
-		mason_lspconfig.setup()
+		mason_lspconfig.setup({
+			ensure_installed = {
+				"lua_ls",
+				"rust_analyzer",
+				"zls",
+				"clangd",
+				"tsserver",
+				"html",
+				"cssls",
+			},
+		})
+		mason_tool_installer.setup({
+			"clang-format",
+			"prettierd",
+			"stylua",
+			"oxlint",
+		})
 
 		local capabilities = vim.lsp.protocol.make_client_capabilities()
 		capabilities = require("cmp_nvim_lsp").default_capabilities(capabilities)
