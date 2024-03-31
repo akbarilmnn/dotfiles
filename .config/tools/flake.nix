@@ -56,6 +56,8 @@
                     			wl-clipboard
 					# password manager 
 					pass
+					# process viewer
+					procs
 				];
 			};
 		};
